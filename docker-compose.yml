@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  spambot:
+    build: .
+    container_name: telegram_spambot
+    restart: always
+    env_file:
+      - .env
