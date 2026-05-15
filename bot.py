@@ -44,6 +44,10 @@ def check_spam(text):
     if MENTION_PATTERN.search(text): return True, False
     return False, False
 
+@bot.message_handler(commands=['start', 'help'], func=lambda message: message.chat.type == 'private')
+def start_command(message):
+    bot.reply_to(message, "Salom! Men guruhlarda spam va reklamalarni o'chiruvchi botman.\n\nMeni guruhga qo'shing va administrator qiling!")
+
 @bot.message_handler(commands=['ban', 'del'], func=lambda message: message.chat.type in ['group', 'supergroup'])
 def admin_commands(message):
     if not is_admin(message):
