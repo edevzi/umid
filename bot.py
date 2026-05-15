@@ -6,7 +6,7 @@ from config import (
     INSTANT_BAN_EMOJIS, INSTANT_BAN_WORDS, MAX_WARNINGS
 )
 
-bot = telebot.TeleBot(BOT_TOKEN)
+bot = telebot.TeleBot(BOT_TOKEN, threaded=False)
 
 user_warnings = {}
 
